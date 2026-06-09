@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rebudget/core/theme/app_theme.dart';
+import 'package:rebudget/features/home/home_page.dart';
 
 void main() {
   runApp(const RebudgetApp());
@@ -12,10 +14,7 @@ class RebudgetApp extends StatelessWidget {
     return MaterialApp(
       title: '复账',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
-        useMaterial3: true,
-      ),
+      theme: AppTheme.lightTheme,
       home: const MainShellPage(),
     );
   }
@@ -36,7 +35,7 @@ class _MainShellPageState extends State<MainShellPage> {
       title: '首页',
       icon: Icons.home_outlined,
       selectedIcon: Icons.home,
-      page: PlaceholderPage(title: '首页'),
+      page: HomePage(),
     ),
     _NavigationItem(
       title: '账单',
